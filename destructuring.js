@@ -6,6 +6,9 @@ const product = {
   screenType: 'LED',
 }
 
+const { price, refreshRate } = product;
+console.log(price, refreshRate);
+
 // Opdracht 2: destructure type en brand en log ze in de console
 
 const productInformation = {
@@ -17,6 +20,9 @@ const productInformation = {
   screenQuality: 'Ultra HD/4K',
   smartTv: true,
 }
+
+const { type, brand } = productInformation.general;
+console.log(type, brand);
 
 // Opdracht 3: destructure wifi en bluetooth en log ze in de console
 
@@ -38,6 +44,9 @@ const tvOptions = {
   },
 };
 
+const { wifi, bluetooth } = tvOptions.options.connectivity.popular;
+console.log(wifi, bluetooth);
+
 // opdracht 4: destructure name en adress uit de return value van deze functie en log ze in de console
 
 function getDetails() {
@@ -47,8 +56,14 @@ function getDetails() {
   }
 }
 
+const { name , adress } = getDetails()
+console.log(name, adress);
+
 // opdracht 5: destructure beide zinnetjes uit de return value van deze functie en log ze in de console
 
-function getDetails(name, age) {
+function getDetailsTwo(name, age) {
   return [`Your name is ${name}`, `You are ${age} years old`];
 }
+
+const [nameTwo , age] = getDetailsTwo("Tanja", 22);
+console.log(nameTwo, age);
